@@ -99,7 +99,7 @@ jobs:
         run: docker load --input /tmp/rails-${{ matrix.rails }}-${{ needs.set-ruby-version.outputs.RUBY_VERSION }}-image.tar
       - name: Run integration tests
         env:
-          NOTIFY_API_KEY: ${{ secrets.NOTIFY_API_KEY }}
+          NOTIFY_API_KEY: ${{ secrets.notify-api-key }}
         run: |
           docker run --rm -e "NOTIFY_API_KEY=$NOTIFY_API_KEY" \
           mail-notify-integration-rails-${{ matrix.rails }}-${{ needs.set-ruby-version.outputs.RUBY_VERSION }}:latest bin/rails test:system
@@ -124,7 +124,7 @@ jobs:
         run: docker load --input /tmp/rails-${{ matrix.rails }}-${{ needs.set-ruby-version.outputs.RUBY_VERSION }}-image.tar
       - name: Run integration tests
         env:
-          NOTIFY_API_KEY: ${{ secrets.NOTIFY_API_KEY }}
+          NOTIFY_API_KEY: ${{ secrets.notify-api-key }}
         run: |
           docker run --rm -e "NOTIFY_API_KEY=$NOTIFY_API_KEY" \
           mail-notify-integration-rails-${{ matrix.rails }}-${{ needs.set-ruby-version.outputs.RUBY_VERSION }}:latest bin/rails test
