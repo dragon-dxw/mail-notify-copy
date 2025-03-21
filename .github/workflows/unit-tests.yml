@@ -29,4 +29,5 @@ jobs:
           fail-on-error: false
   reusable:
     uses: dxw/mail-notify/.github/workflows/reusable.yml@reusable
-    secrets: inherit
+    secrets:
+      notify-api-key: ${{secrets.NOTIFY_API_KEY}}
