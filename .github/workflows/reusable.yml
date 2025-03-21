@@ -9,6 +9,10 @@ on:
             description: "placeholder"
             type: string
             required: false
+    secrets:
+        notify-api-key:
+            required: true
+
         
 jobs:
   set-matrix:
