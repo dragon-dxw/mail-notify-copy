@@ -28,5 +28,5 @@ jobs:
         with:
           fail-on-error: false
   reusable:
-    uses: dxw/mail-notify/.github/workflows/reusable.yaml@reusable
+    uses: dxw/mail-notify/.github/workflows/reusable.yml@reusable
     secrets: inherit
